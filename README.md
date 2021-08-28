@@ -32,4 +32,4 @@ Choice the path of train-data,test-data and model-output in `train.py`, then run
 
 ## 其他/Others
 目前模型因样本数量过少，判断效果并不理想，持续更新中。  
-Because of the train-data are too few, the judgment effect is not ideal.Continuous updating.
+Because of the train-data is too few, the judgment effect is not ideal.Continuous updating.
