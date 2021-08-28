@@ -30,6 +30,6 @@ pip install ltp
 在`train.py`中选择训练样本、测试样本与输出模型路径，运行`train.py`即可。训练样本、测试样本为csv文件，格式可参考`sample.csv`。  
 Choice the path of train-data,test-data and model-output in `train.py`, then run the `train.py`. train_data and test_data are csv file, the format of them can reference `sample.csv`.
 
-## 其他 **/** Others
+## 其他/Others
 目前模型因样本数量过少，判断效果并不理想，持续更新中。  
 Because of the train-data are too few, the judgment effect is not ideal.Continuous updating.
