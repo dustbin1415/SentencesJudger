@@ -58,9 +58,11 @@ if __name__ == '__main__':
             string = input('请输入一个句子:')
             seg, tmp = ltp.seg([string])
             words = []
-            for word in seg[0]:
-                tmp_list = list(word.encode())
-                words += [tmp_list + [0 for i in range(30 - len(tmp_list))]]
+            ps = ltp.pos(tmp)
+            for i in range(len(seg[0])):
+                if ps[0][i] != 'wp':
+                    tmp_list = list(seg[0][i].encode())
+                    words += [tmp_list + [0 for i in range(30 - len(tmp_list))]]
             if Run(words):
                 print("True")
             else:
