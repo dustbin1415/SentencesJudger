@@ -14,7 +14,7 @@ SentencesJudger is a program based on GRU network. Its basic function is to judg
 pip install torch
 pip install ltp
 ```
-3. 运行main.py **/** Run main.py
+3. 运行·main.p·y **/** Run ·main.py·
 
 ## 效果/effect
 * 在训练数据中准确率为96.7% **/** Accuracy 96.7% in train-data
