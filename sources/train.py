@@ -10,9 +10,9 @@ HIDDEN_SIZE = 256
 RNN_LAYER = 2
 BIDIRECTIONAL = True
 BATCH_FIRST = True
-train_data_path = './train.csv'
-test_data_path = './test.csv'
-model_path = './model.pkl'
+train_data_path = '../datasets/train.csv'
+test_data_path = '../datasets/test.csv'
+model_path = '../models/model.pkl'
 hidden = None
 
 class GRU(nn.Module):
