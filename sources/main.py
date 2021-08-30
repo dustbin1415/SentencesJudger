@@ -9,7 +9,7 @@ HIDDEN_SIZE = 256
 RNN_LAYER = 2
 BIDIRECTIONAL = True
 BATCH_FIRST = True
-model_path = './model.pkl'
+model_path = "../models/model.pkl"
 hidden = None
 
 class GRU(nn.Module):
