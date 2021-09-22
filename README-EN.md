@@ -4,7 +4,7 @@
 SentencesJudger is a program based on GRU network. Its basic function is to judge whether a sentence in the article is a beautiful sentence.
 - - -
 
-[中文](./README.md)
+[中文](./README.md)|[Demo](https://sentencesjudger.xyz)
 
 ## How to use SentencesJudger?
 1. Check the Python runtime environment
