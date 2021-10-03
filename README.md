@@ -3,13 +3,13 @@
 SentencesJudger 是一个基于GRU神经网络的句子判断程序，基本的功能是判断文章中的某一句话是否为一个优美的句子。  
 - - -
 
-[English](./README-EN.md)|[Demo](https://sentencesjudger.xyz)
+[English](./README-EN.md)|[Website](https://sentencesjudger.xyz)
 
 ## 如何使用SentencesJudger
 1. 确认Python运行环境
-2. 安装pyTorch与LTP
+2. 安装pyTorch,jieba与paddlepaddle(jieba的词性标注使用)
     ```bash
-    python3 -m pip install -U torch ltp
+    python3 -m pip install -U torch jieba paddlepaddle
     ```
 1. 运行`main.py`
     ```bash
@@ -24,7 +24,6 @@ SentencesJudger 是一个基于GRU神经网络的句子判断程序，基本的�
 
 ## 注意事项
 * 确保模型的加载路径
-* 在首次运行时连接网络（以便加载LTP模型）
 * 使用UTF-8编码
 * 内置模型仅支持中文
 
@@ -36,4 +35,4 @@ SentencesJudger 是一个基于GRU神经网络的句子判断程序，基本的�
 
 ## 使用方案
 * [pyTorch](https://github.com/pytorch/pytorch)
-* [LTP](https://github.com/HIT-SCIR/ltp)
+* [jieba](https://github.com/fxsjy/jieba)
