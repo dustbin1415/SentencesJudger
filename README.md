@@ -7,7 +7,7 @@ SentencesJudger 是一个基于GRU神经网络的句子判断程序，基本的�
 
 ## 如何使用SentencesJudger
 1. 确认Python运行环境
-2. 安装pyTorch,jieba与paddlepaddle(jieba的词性标注使用)
+2. 安装pyTorch, jieba与paddlepaddle(jieba的词性标注使用)
     ```bash
     python3 -m pip install -U torch jieba paddlepaddle
     ```
