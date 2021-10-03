@@ -4,13 +4,13 @@
 SentencesJudger is a program based on GRU network. Its basic function is to judge whether a sentence in the article is a beautiful sentence.
 - - -
 
-[中文](./README.md)|[Demo](https://sentencesjudger.xyz)
+[中文](./README.md)|[Website](https://sentencesjudger.xyz)
 
 ## How to use SentencesJudger?
 1. Check the Python runtime environment
-2. Install pyTorch and ltp
+2. Install pyTorch, jieba and paddlepaddle(for the part of speech tagging module of jieba)
     ```bash
-    python3 -m pip install -U torch ltp
+    python3 -m pip install -U torch jieba paddlepaddle
     ```
 3. Run `main.py`
 
@@ -22,7 +22,6 @@ SentencesJudger is a program based on GRU network. Its basic function is to judg
 
 ## Notice
 * Make sure the model loading path are correct
-* Connect to the Internet in first running
 * Use UTF-8 encoding
 * The built-in model only supports Chinese
 
@@ -34,4 +33,4 @@ Because of the train-data is too few, the judgment effect is not ideal.Continuou
 
 ## Powered by
 * [pyTorch](https://github.com/pytorch/pytorch)
-* [LTP](https://github.com/HIT-SCIR/ltp)
+* [jieba](https://github.com/fxsjy/jieba)
