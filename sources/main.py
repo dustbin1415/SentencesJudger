@@ -1,15 +1,15 @@
 import os
 import torch
 import torch.nn as nn
-from ltp import LTP
+import jieba.posseg as pseg
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-INPUT_SIZE = 30
+INPUT_SIZE = 31
 HIDDEN_SIZE = 256
 RNN_LAYER = 2
 BIDIRECTIONAL = True
 BATCH_FIRST = True
-model_path = "../models/model.pkl"
+model_path = '../models/model.pkl'
 hidden = None
 
 class GRU(nn.Module):
@@ -39,8 +39,7 @@ class GRU(nn.Module):
         return self.out(hidden_cat)
 
 def Run(input):
-    for word in input:
-        output = gru(torch.FloatTensor([[word]]), hidden)
+    output = gru(torch.FloatTensor([input]), hidden)
     if output[0][0] > output[0][1]: 
         tag = True
     else: 
@@ -50,19 +49,24 @@ def Run(input):
 if __name__ == '__main__':
     try:
         print('加载中...')
-        gru = torch.load(model_path)
+        gru = torch.load(model_path,map_location='cpu')
         gru = gru.to(DEVICE)
-        ltp = LTP()
         print('加载完成')
+        dist = {'a': 0, 'ad': 1, 'ag': 2, 'an': 3, 'b': 4, 'c': 5, 'd': 6, 'df': 7, 'dg': 8, 'e': 9, 
+            'f': 10, 'g': 11, 'h': 12, 'i': 13, 'j': 14, 'k': 15, 'l': 16, 'm': 17, 'mg': 18,
+            'mq': 19, 'n': 20, 'ng': 21, 'nr': 22, 'nrfg': 23, 'nrt': 24, 'ns': 25, 'nt': 26,
+            'nz': 27, 'o': 28, 'p': 29, 'q': 30, 'r': 31, 'rg': 32, 'rr': 33, 'rz': 34,
+            's': 35, 't': 36, 'tg': 37, 'u': 38, 'ud': 39, 'ug': 40, 'uj': 41, 'ul': 42,
+            'uv': 43, 'uz': 44, 'v': 45, 'vd': 46, 'vg': 48, 'vi': 49, 'vn': 50, 'vq': 51,
+            'y': 52, 'yg': 53, 'z': 54, 'zg': 55, 'eng': 56}
         while True:
             string = input('请输入一个句子:')
-            seg, tmp = ltp.seg([string])
+            tmp = pseg.cut(string, use_paddle=True)
             words = []
-            ps = ltp.pos(tmp)
-            for i in range(len(seg[0])):
-                if ps[0][i] != 'wp':
-                    tmp_list = list(seg[0][i].encode())
-                    words += [tmp_list + [0 for i in range(30 - len(tmp_list))]]
+            for word, flag in tmp:
+                if(flag != 'w' and flag != 'x'):
+                    tmp_list = list(word.encode())
+                    words += [tmp_list + [0 for i in range(30 - len(tmp_list))] + [dist[flag]]]
             if Run(words):
                 print("True")
             else:
