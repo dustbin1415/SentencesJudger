@@ -3,7 +3,7 @@
 SentencesJudger 是一个基于GRU神经网络的句子判断程序，基本的功能是判断文章中的某一句话是否为一个优美的句子。  
 - - -
 
-[English](./README-EN.md)|[Website](https://sentencesjudger.xyz)
+[English](./README-EN.md)|[网页版本](https://sentencesjudger.xyz)
 
 ## 如何使用SentencesJudger
 1. 确认Python运行环境
